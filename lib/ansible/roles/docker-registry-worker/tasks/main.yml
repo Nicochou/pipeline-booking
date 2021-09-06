@@ -1,0 +1,37 @@
+---
+# tasks file for docker-registry-worker
+ - name: check docker sdk version
+   shell: pip install docker
+   ignore_errors: true
+
+ - name: updating /etc/hosts file for every worker node to connect to docker swarm manager
+   lineinfile:
+          path: /etc/hosts
+          line: "{{swarm_manager_ip}} {{ domain_name_of_swarm_manager }}"
+ 
+ - name: create a daemon.json file
+   file:
+      path: /etc/docker/daemon.json
+      state: touch
+
+ - name: update authentication to the registry
+   lineinfile:
+          dest: /etc/docker/daemon.json
+          line: '{{item}}'
+   with_items:
+      - '{'
+      - '      "insecure-registries" : ["{{domain_name_of_swarm_manager}}:{{registry_port}}"]'
+      - '}'
+   register: daemon
+ 
+ - name: delete extra marker in json file
+   lineinfile:
+          path: /etc/docker/daemon.json
+          state: absent
+          regexp: "ANSIBLE_BLOCK"
+   ignore_errors: true
+ - name: Restart docker services
+   service:
+          name: docker
+          state: restarted
+   when: daemon is changed

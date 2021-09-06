@@ -1,0 +1,540 @@
+{
+	"variables": [],
+	"info": {
+		"name": "MyBookingService",
+		"_postman_id": "f47ca42b-ec78-4f9c-58c1-7a966a4991f7",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api-booking",
+			"description": "",
+			"item": [
+				{
+					"name": "Rooms",
+					"description": "",
+					"item": [
+						{
+							"name": "Get all rooms",
+							"request": {
+								"url": "{{host}}/api/rooms",
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Get all available rooms",
+							"request": {
+								"url": "{{host}}/api/rooms",
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Get one room by id",
+							"request": {
+								"url": "{{host}}/api/rooms/1",
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Create room",
+							"request": {
+								"url": "{{host}}/api/rooms",
+								"method": "POST",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Modify room",
+							"request": {
+								"url": "{{host}}/api/rooms/1",
+								"method": "PUT",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Delete all rooms",
+							"request": {
+								"url": "{{host}}/api/rooms",
+								"method": "DELETE",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Delete one room by id",
+							"request": {
+								"url": "{{host}}/api/rooms:1",
+								"method": "DELETE",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Hotels",
+					"description": "",
+					"item": [
+						{
+							"name": "Get all hotels",
+							"request": {
+								"url": "{{host}}/api/hotels",
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Get one hotel by id",
+							"request": {
+								"url": "{{host}}/api/hotels:1",
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Delete one hotel by id",
+							"request": {
+								"url": "{{host}}/api/hotels:1",
+								"method": "DELETE",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Delete one hotel by id copy",
+							"request": {
+								"url": "{{host}}/api/hotels:1",
+								"method": "DELETE",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Create hotel",
+							"request": {
+								"url": "{{host}}/api/hotels/1",
+								"method": "POST",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Modify hotel",
+							"request": {
+								"url": "{{host}}/api/hotels/1",
+								"method": "PUT",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Users",
+					"description": "",
+					"item": [
+						{
+							"name": "Test all access",
+							"request": {
+								"url": "{{host}}/api/test/all",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"username\" : \"totototo\",\n\t\"password\": \"123456\"\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Test user access",
+							"request": {
+								"url": "{{host}}/api/test/user",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"username\" : \"totototo\",\n\t\"password\": \"123456\"\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Test moderator access",
+							"request": {
+								"url": "{{host}}/api/test/mod",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"username\" : \"totototo\",\n\t\"password\": \"123456\"\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Test admin access",
+							"request": {
+								"url": "{{host}}/api/test/admin",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"username\" : \"totototo\",\n\t\"password\": \"123456\"\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Authentication",
+					"description": "",
+					"item": [
+						{
+							"name": "Login",
+							"request": {
+								"url": "{{host}}/api/auth/signin",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"username\" : \"totototo\",\n\t\"password\": \"123456\"\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Register",
+							"request": {
+								"url": "{{host}}/api/auth/signup",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"username\" : \"tototo\",\n\t\"email\" : \"tototo@gmail.com\",\n\t\"password\" : \"123456\",\n\t\"roles\" : [\"moderator\",\"user\"]\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Test API",
+					"description": "",
+					"item": [
+						{
+							"name": "Test success api",
+							"request": {
+								"url": "{{host}}/api/testSuccess",
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Test unauthorize api",
+							"request": {
+								"url": "{{host}}/api/testAuthorize",
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Test error api",
+							"request": {
+								"url": "{{host}}/api/testError",
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "api-pricing",
+			"description": "",
+			"item": [
+				{
+					"name": "Test API",
+					"description": "",
+					"item": [
+						{
+							"name": "Test success api",
+							"request": {
+								"url": "{{host}}/api/testSuccess",
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Test unauthorize api",
+							"request": {
+								"url": "{{host}}/api/testAuthorize",
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Test error api",
+							"request": {
+								"url": "{{host}}/api/testError",
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Tarifs",
+					"description": "",
+					"item": [
+						{
+							"name": "Get all tarifs",
+							"request": {
+								"url": "{{host}}/api/hotels",
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Get one tarif by id",
+							"request": {
+								"url": "{{host}}/api/tarifs:1",
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Delete one tarif by id",
+							"request": {
+								"url": "{{host}}/api/tarifs/1",
+								"method": "DELETE",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Delete all tarifs",
+							"request": {
+								"url": "{{host}}/api/tarifs",
+								"method": "DELETE",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Create tarif",
+							"request": {
+								"url": "{{host}}/api/hotels/1",
+								"method": "POST",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Modify tarif",
+							"request": {
+								"url": "{{host}}/api/hotels/1",
+								"method": "PUT",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Services",
+					"description": "",
+					"item": [
+						{
+							"name": "Get all services",
+							"request": {
+								"url": "{{host}}/api/services",
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Get one service by id",
+							"request": {
+								"url": "{{host}}/api/service/1",
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Delete one service by id",
+							"request": {
+								"url": "{{host}}/api/services/1",
+								"method": "DELETE",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Delete all services",
+							"request": {
+								"url": "{{host}}/api/tarifs",
+								"method": "DELETE",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Create service",
+							"request": {
+								"url": "{{host}}/api/services",
+								"method": "POST",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Modify service",
+							"request": {
+								"url": "{{host}}/api/services/1",
+								"method": "PUT",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		}
+	]
+}

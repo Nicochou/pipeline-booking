@@ -1,0 +1,27 @@
+{
+  "name": "api-pricing",
+  "version": "1.0.0",
+  "description": "Node.js application to get pricing of the rooms and hotels",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js",
+    "start:dev": "nodemon server.js"
+  },
+  "author": "etna",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jest": "^27.0.6",
+    "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5",
+    "nodemailer": "^6.6.3",
+    "nodemon": "^2.0.12",
+    "sequelize": "^5.22.4",
+    "supertest": "^6.1.5"
+  }
+}

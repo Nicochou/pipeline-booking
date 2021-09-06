@@ -1,0 +1,4 @@
+---
+# tasks file for docker-registry
+ - name: calling docker-manager
+   include: docker-manager.yml

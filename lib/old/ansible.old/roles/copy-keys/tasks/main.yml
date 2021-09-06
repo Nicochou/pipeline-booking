@@ -1,0 +1,35 @@
+---
+- name: set permissions for .ssh directory
+  file: path=/home/ansible_clo/.ssh mode=0700
+
+#- name: create authorized_keys file
+#  file: path=/home/ansible_clo/.ssh/authorized_keys state=touch mode=0644
+
+- name: insert public ssh key for user sahil
+  blockinfile:
+    path: /home/ansible_clo/.ssh/authorized_keys
+    create: yes
+    block: |
+      ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDCW/WQJfRV2CVN+h/uXuxliyZ06TGyagbDgFI0z0z1smTBkuVeXx84at3iDZ07KXRYxSZUye6ea4qFqujJutGs+6kcY1cMIGL81OKZsKEdnozVhgZ+2Zg6ijICV4jnX8U4++bhaMgutMKSGT6qKRwg8UpHaY6t24D8oI2wteQsxycVk6Ortul4hN/Em2FPC/cbAVlNdtIRI0Wmgvkf6JjtXfzyO7O7A2NspRwgY2WjBp2dOgLU5jOu+3fd5eqZ+Zh/i+/ETI++9qnfprEeI6b8bhWAIaUcQPuuZKHLwXntSROvv0MiEwxikvMxJoBfiYWfHf9yqDnki6RXhDJix1IQVLdqzKyANVHsfpzEsPll0j+S5u86cgyPgqeUWbOp14cE3jSU3w5k0/IdQEOrg2+nfGiDPPP9S6C2602epeWBa9biWTS8oq/4Cgh+sh0tSa03AOah/w4RQrYhB7sTjAWPvSRxRxcpE8ZU7x/WTbCMzRfSJ9BlWnXWhfAuJcRrvQU= zackslamani@MacBook-Pro-de-Zack.local
+
+#- name: Copy Publick Key to Other Hosts
+#  become: true
+  #delegate_to: localhost
+#  become_user: docker  
+#- name: copy public key
+#  become: true
+#  become_user: docker
+#  copy:
+#    src: id_rsa.pub
+#    dest: /.ssh/id_rsa.pub
+#    mode: '0644'
+#- copy:
+#    src: id_rsa.pub
+#    #remote_src: yes
+#    dest: /.ssh/id_rsa.pub
+#    mode: 0644
+#- name: Append Public key in authorized_keys file
+#  authorized_key:
+#    user: docker
+#    state: present
+#    key: "{{ lookup('file', '/.ssh/id_rsa.pub') }}"

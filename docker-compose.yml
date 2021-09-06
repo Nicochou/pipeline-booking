@@ -1,0 +1,92 @@
+# We specify the version of docker compose
+version: "3.9"
+# We specify the different services
+services: 
+    # The booking api
+    api-booking:
+        # the build folder
+        image: api-booking
+        build: 
+            context: ./api-booking
+            dockerfile: ./Dockerfile
+        container_name: api-booking
+        # the ports to map
+        ports: 
+            - 8082:8082
+            - 9229:9229
+            - 9230:9230
+        # start after the database
+        depends_on: 
+            - database
+            - phpmyadmin
+        # The differents networks
+        networks:
+            - private
+            - public
+    # The pricing api
+    api-pricing:
+        # the build folder
+        image: api-pricing
+        build: 
+            context: ./api-pricing
+            dockerfile: ./Dockerfile
+        container_name: api-pricing
+        # the ports to map
+        ports: 
+            - 8083:8083
+            - 9231:9231
+            - 9232:9232
+        # start after the database
+        depends_on: 
+            - database
+            - phpmyadmin
+        # The differents networks
+        networks:
+            - private
+            - public
+    # The database
+    database:
+        # https://hub.docker.com/_/mysql
+        image: mysql:latest
+        container_name: database
+        # The differents networks
+        networks:
+            - private
+        # Ports
+        ports:
+            - "6033:3306"
+        # The shared folder
+        volumes:
+            - db-data:/var/lib/mysql
+        environment:
+            - MYSQL_ROOT_PASSWORD=root
+    # The database
+    phpmyadmin:
+        # https://hub.docker.com/_/phpmyadmin
+        image: phpmyadmin:latest
+        container_name: phpmyadmin
+        restart: always
+        # The differents networks
+        networks:
+            - private
+        # start after the database
+        depends_on:
+            - database
+        # Links to the db
+        links:
+            - database
+        environment:
+            PMA_HOST: database
+            PMA_PORT: 3306
+        # Set up the port
+        ports:
+            - 30002:80
+# We specify the different networks
+networks:
+    public:
+    private:
+# We specify the differents shared folders
+volumes:
+    db-data:
+
+    

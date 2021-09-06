@@ -1,0 +1,6 @@
+---
+# defaults file for docker-registry
+registry_name : local-registry
+registry_port : 7070
+registry_volume_path : /var/lib/registry 
+registry_volume_source : my_volume_source

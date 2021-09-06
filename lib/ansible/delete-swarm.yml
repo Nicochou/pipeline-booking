@@ -1,0 +1,16 @@
+---
+- name: workers leave the swarm
+  hosts: swarm-workers
+  become: yes
+  become_method: sudo
+  become_user: root
+  roles:
+    - docker-swarm-leave
+
+- name: managers leave the swarm
+  hosts: swarm-managers
+  become: yes
+  become_method: sudo
+  become_user: root
+  roles:
+    - docker-swarm-leave

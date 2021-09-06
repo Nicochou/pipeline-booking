@@ -1,0 +1,5 @@
+---
+# defaults file for docker-registry-worker
+swarm_manager_ip: 172.16.233.60
+domain_name_of_swarm_manager: registry.localhost.com
+registry_port: 7070
